@@ -61,7 +61,7 @@ resource "aws_s3_bucket" "tfstate_bucket" {
     prevent_destroy = true
   }
 
-  aws_s3_bucket_versioning {
+versioning {
     enabled = true
   }
 
