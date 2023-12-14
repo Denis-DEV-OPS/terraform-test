@@ -1,6 +1,5 @@
 provider "aws" {
   region = "us-east-1"
-  profile = "denis.gorbunov"
 }
 
 data "aws_availability_zones" "available" {}
