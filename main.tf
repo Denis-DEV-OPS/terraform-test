@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-east-1"
+  profile = "denis.gorbunov"
 }
 
 data "aws_availability_zones" "available" {}
@@ -94,7 +95,8 @@ terraform {
   backend "s3" {
     bucket         = "terraform_state"
     key            = "global/s3/terraform.tfstate"
-    region         = "us-east-2"
+    region         = "us-east-1"
+    profile        = "denis.gorbunov"
     dynamodb_table = "terraform_locks"
     encrypt        = true
   }
