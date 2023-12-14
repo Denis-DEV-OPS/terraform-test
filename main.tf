@@ -23,11 +23,21 @@ module "eks" {
     ami_type = "AL2_x86_64"
   }
 
-  eks_managed_node_groups = {
+ eks_managed_node_groups = {
     one = {
-      name = "gdv-node-group"
+      name = "node-group-1"
 
-      instance_types = ["t3.medium"]
+      instance_types = ["t2.micro"]
+
+      min_size     = 1
+      max_size     = 2
+      desired_size = 1
+    }
+
+    two = {
+      name = "node-group-2"
+
+      instance_types = ["t2.micro"]
 
       min_size     = 1
       max_size     = 2
