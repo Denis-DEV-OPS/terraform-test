@@ -9,6 +9,6 @@ resource "aws_instance" "ec2_instance" {
   key_name      = "vpc"
 	
   tags = {
-      Name = "TF-Instance"
+      Name = "EC2"
   }
 } 
