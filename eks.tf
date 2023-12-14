@@ -1,16 +1,15 @@
 module "eks"{
     source = "terraform-aws-modules/eks/aws"
     version = "19.21.0"
-    cluster_name = local.cluster_name
+    cluster_name = demo-cluster
     cluster_version = "1.28"
     subnets = module.vpc.private_subnets
 tags = {
         Name = "Demo-EKS-Cluster"
     }
+
 vpc_id = module.vpc.vpc_id
-    workers_group_defaults = {
-        root_volume_type = "gp2"
-    }
+
 workers_group = [
         {
             name = "Worker-Group-1"
